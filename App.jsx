@@ -4,12 +4,10 @@ import React, { useState } from 'react';
 const App = () => {
   return (
     <div className="min-h-screen bg-black text-white font-sans overflow-x-hidden">
-      {/* Tailwind CSS CDN script for development purposes */}
-      <script src="https://cdn.tailwindcss.com"></script>
-      {/* Font Awesome for icons */}
+      {/* Tailwind CSS CDN script for development purposes - typically loaded in index.html or via postcss/webpack */}
+      {/* For this setup, it's assumed Tailwind is loaded globally via CDN or build process */}
+      {/* Font Awesome is loaded via CDN link in the head (can be moved to index.html for strict correctness) */}
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"></link>
-      {/* Lucide React for icons - assuming it's available in the environment */}
-      {/* <script src="https://cdn.jsdelivr.net/npm/lucide-react@latest/dist/lucide-react.min.js"></script> */}
 
       {/* Header Section */}
       <Header />
@@ -566,66 +564,3 @@ const Footer = () => {
 };
 
 export default App;
-
-/*
-  Tailwind CSS Customizations (for demonstration - typically in tailwind.config.js)
-  These styles would be added to a tailwind.config.js file in a real project.
-  For this standalone example, consider them conceptual.
-*/
-const style = document.createElement('style');
-style.innerHTML = `
-  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
-
-  body {
-    font-family: 'Inter', sans-serif;
-  }
-
-  .animate-fade-in-up {
-    animation: fadeInUp 1s ease-out forwards;
-    opacity: 0;
-  }
-
-  .animation-delay-500 {
-    animation-delay: 0.5s;
-  }
-
-  .animation-delay-1000 {
-    animation-delay: 1s;
-  }
-
-  @keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  .animate-blob {
-    animation: blob 7s infinite;
-  }
-
-  .animation-delay-2000 {
-    animation-delay: 2s;
-  }
-
-  .animation-delay-4000 {
-    animation-delay: 4s;
-  }
-
-  @keyframes blob {
-    0%, 100% {
-      transform: translate(0, 0) scale(1);
-    }
-    33% {
-      transform: translate(30px, -50px) scale(1.1);
-    }
-    66% {
-      transform: translate(-20px, 20px) scale(0.9);
-    }
-  }
-`;
-document.head.appendChild(style);
